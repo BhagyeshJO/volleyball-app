@@ -1,14 +1,3 @@
 {
-  "sessions": [
-    {
-      "id": 1775592097471,
-      "date": "2026-04-19",
-      "time": "15:30",
-      "location": "FAU Sports Hall",
-      "max": 18,
-      "min": 10,
-      "names": [],
-      "creatorToken": "e660bdcad8ec03aeb1a45292cfab39ee722c05fb9754434e"
-    }
-  ]
+  "sessions": []
 }

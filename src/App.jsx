@@ -389,6 +389,9 @@ export default function VolleyballBookingPreview() {
     return (selected?.names ?? []).map((name) => normalizeName(name));
   }, [selected]);
 
+  const selectedCreatorToken = selected ? getCreatorToken(selected.id) : "";
+  const isSelectedSessionCreator = Boolean(selected && selectedCreatorToken);
+
   const teamData = useMemo(() => {
     if (!selected) {
       return {
@@ -615,6 +618,9 @@ export default function VolleyballBookingPreview() {
       setSessions(Array.isArray(data.sessions) ? data.sessions : []);
       if (data.created?.id) {
         setSelectedId(data.created.id);
+        if (data.created.creatorToken) {
+          saveCreatorToken(data.created.id, data.created.creatorToken);
+        }
       }
       setShowDeleteConfirm(false);
       setMessage(
@@ -913,6 +919,10 @@ export default function VolleyballBookingPreview() {
                         : formatString(t.goodBanner, { count: selected.names.length })}
                   </div>
 
+                  <div className="mt-2 text-xs text-slate-400">
+                    {isSelectedSessionCreator ? "Creator session detected on this browser." : ""}
+                  </div>
+
                   <div className="mt-5 grid gap-4 md:grid-cols-4">
                     <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200">
                       <div className="text-sm text-slate-500">{t.currentCount}</div>
@@ -1122,4 +1132,26 @@ async function apiRequest(url, options = {}) {
   }
 
   return data;
+}
+
+function getCreatorMap() {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = window.localStorage.getItem("session-creators");
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveCreatorToken(sessionId, token) {
+  if (typeof window === "undefined" || !sessionId || !token) return;
+  const current = getCreatorMap();
+  current[String(sessionId)] = token;
+  window.localStorage.setItem("session-creators", JSON.stringify(current));
+}
+
+function getCreatorToken(sessionId) {
+  const map = getCreatorMap();
+  return map[String(sessionId)] || "";
 }

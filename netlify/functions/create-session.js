@@ -1,9 +1,14 @@
 import { json, readSessionsFile, sortSessions, writeSessionsFile } from "./_github.js";
+import crypto from "node:crypto";
 
 function deriveMinPlayers(maxPlayers) {
   if (maxPlayers >= 18) return 10;
   if (maxPlayers >= 12) return 8;
   return 6;
+}
+
+function createCreatorToken() {
+  return crypto.randomBytes(24).toString("hex");
 }
 
 export async function handler(event) {
@@ -31,6 +36,8 @@ export async function handler(event) {
     }
 
     const min = deriveMinPlayers(max);
+    const creatorToken = createCreatorToken();
+
     const { sessions, sha } = await readSessionsFile();
 
     const newSession = {
@@ -41,6 +48,7 @@ export async function handler(event) {
       max,
       min,
       names: [],
+      creatorToken,
     };
 
     const updated = sortSessions([...sessions, newSession]);
@@ -51,8 +59,19 @@ export async function handler(event) {
       `Create session ${date} ${time} ${location} max ${max}`
     );
 
-    return json(200, { sessions: updated, created: newSession });
+    return json(200, {
+      sessions: updated.map(stripCreatorToken),
+      created: {
+        ...stripCreatorToken(newSession),
+        creatorToken,
+      },
+    });
   } catch (error) {
     return json(500, { error: error.message });
   }
+}
+
+function stripCreatorToken(session) {
+  const { creatorToken, ...publicSession } = session;
+  return publicSession;
 }

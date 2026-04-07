@@ -11,8 +11,15 @@ export async function handler(event) {
 
   try {
     const { sessions } = await readSessionsFile();
-    return json(200, { sessions: sortSessions(sessions) });
+    return json(200, {
+      sessions: sortSessions(sessions).map(stripCreatorToken),
+    });
   } catch (error) {
     return json(500, { error: error.message });
   }
+}
+
+function stripCreatorToken(session) {
+  const { creatorToken, ...publicSession } = session;
+  return publicSession;
 }

@@ -3,7 +3,6 @@ import { useEffect, useMemo, useState } from "react";
 const translations = {
   en: {
     code: "EN",
-    languageName: "English",
     preview: "Interactive front-end preview",
     title: "Volleyball session planner",
     subtitle:
@@ -41,12 +40,6 @@ const translations = {
     nameOnlyMode: "Name-only mode",
     copySummary: "Copy summary",
     summaryCopied: "Session summary copied.",
-    deleteSession: "Delete session",
-    deleteConfirmTitle: "Delete this session?",
-    deleteConfirmText: "This session will be removed for everyone.",
-    deleteConfirmYes: "Yes, delete",
-    deleteConfirmNo: "Cancel",
-    deleteSuccess: "Session deleted.",
     autoTeamGenerator: "Auto team generator",
     autoTeamSubtitle: "Teams and rotation are created automatically based on player count.",
     shuffle: "Shuffle",
@@ -76,10 +69,20 @@ const translations = {
     twoBalancedTeams: "2 balanced teams of 5",
     twoTeamsOneRotation: "2 teams of 5 + 1 rotation player",
     waitingForPlayers: "Waiting for players",
+    deleteSession: "Delete session",
+    deleteConfirmTitle: "Delete this session?",
+    deleteConfirmText: "This session will be removed for everyone.",
+    deleteConfirmYes: "Yes, delete",
+    deleteConfirmNo: "Cancel",
+    deleteSuccess: "Session deleted.",
+    loading: "Loading sessions...",
+    noSessionYet: "No session yet",
+    createFirstSession: "Create your first session above and it will appear here.",
+    createSessionFirstForTeams: "Create a session first to see teams here.",
+    requestFailed: "Something went wrong. Please try again.",
   },
   de: {
     code: "DE",
-    languageName: "Deutsch",
     preview: "Interaktive Frontend-Vorschau",
     title: "Volleyball-Session-Planer",
     subtitle:
@@ -117,12 +120,6 @@ const translations = {
     nameOnlyMode: "Nur-Namen-Modus",
     copySummary: "Zusammenfassung kopieren",
     summaryCopied: "Session-Zusammenfassung kopiert.",
-    deleteSession: "Session löschen",
-    deleteConfirmTitle: "Diese Session löschen?",
-    deleteConfirmText: "Diese Session wird für alle entfernt.",
-    deleteConfirmYes: "Ja, löschen",
-    deleteConfirmNo: "Abbrechen",
-    deleteSuccess: "Session gelöscht.",
     autoTeamGenerator: "Automatischer Teamgenerator",
     autoTeamSubtitle: "Teams und Rotation werden automatisch je nach Spielerzahl erstellt.",
     shuffle: "Neu mischen",
@@ -152,10 +149,20 @@ const translations = {
     twoBalancedTeams: "2 ausgeglichene Teams mit je 5",
     twoTeamsOneRotation: "2 Teams mit je 5 + 1 Rotationsspieler",
     waitingForPlayers: "Warten auf Spieler",
+    deleteSession: "Session löschen",
+    deleteConfirmTitle: "Diese Session löschen?",
+    deleteConfirmText: "Diese Session wird für alle entfernt.",
+    deleteConfirmYes: "Ja, löschen",
+    deleteConfirmNo: "Abbrechen",
+    deleteSuccess: "Session gelöscht.",
+    loading: "Sessions werden geladen...",
+    noSessionYet: "Noch keine Session",
+    createFirstSession: "Erstelle oben deine erste Session, dann erscheint sie hier.",
+    createSessionFirstForTeams: "Erstelle zuerst eine Session, um hier Teams zu sehen.",
+    requestFailed: "Etwas ist schiefgelaufen. Bitte versuche es erneut.",
   },
   hi: {
     code: "HI",
-    languageName: "हिंदी",
     preview: "इंटरैक्टिव फ्रंट-एंड प्रिव्यू",
     title: "वॉलीबॉल सेशन प्लानर",
     subtitle:
@@ -193,12 +200,6 @@ const translations = {
     nameOnlyMode: "सिर्फ नाम मोड",
     copySummary: "समरी कॉपी करें",
     summaryCopied: "सेशन समरी कॉपी हो गई।",
-    deleteSession: "सेशन हटाएं",
-    deleteConfirmTitle: "क्या यह सेशन हटाना है?",
-    deleteConfirmText: "यह सेशन सभी के लिए हट जाएगा।",
-    deleteConfirmYes: "हाँ, हटाएं",
-    deleteConfirmNo: "कैंसल",
-    deleteSuccess: "सेशन हटा दिया गया।",
     autoTeamGenerator: "ऑटो टीम जनरेटर",
     autoTeamSubtitle: "प्लेयर काउंट के हिसाब से टीम और रोटेशन अपने आप बनते हैं।",
     shuffle: "शफल",
@@ -228,10 +229,20 @@ const translations = {
     twoBalancedTeams: "5-5 की 2 बैलेंस्ड टीमें",
     twoTeamsOneRotation: "5-5 की 2 टीमें + 1 रोटेशन प्लेयर",
     waitingForPlayers: "प्लेयर्स का इंतज़ार",
+    deleteSession: "सेशन हटाएं",
+    deleteConfirmTitle: "क्या यह सेशन हटाना है?",
+    deleteConfirmText: "यह सेशन सभी के लिए हट जाएगा।",
+    deleteConfirmYes: "हाँ, हटाएं",
+    deleteConfirmNo: "कैंसल",
+    deleteSuccess: "सेशन हटा दिया गया।",
+    loading: "सेशन्स लोड हो रहे हैं...",
+    noSessionYet: "अभी कोई सेशन नहीं",
+    createFirstSession: "ऊपर अपना पहला सेशन बनाओ, फिर वह यहां दिखेगा।",
+    createSessionFirstForTeams: "टीम्स यहां देखने के लिए पहले एक सेशन बनाओ।",
+    requestFailed: "कुछ गड़बड़ हो गई। फिर से कोशिश करो।",
   },
   ru: {
     code: "RU",
-    languageName: "Русский",
     preview: "Интерактивный предпросмотр интерфейса",
     title: "Планировщик волейбольных сессий",
     subtitle:
@@ -269,12 +280,6 @@ const translations = {
     nameOnlyMode: "Режим только по имени",
     copySummary: "Копировать сводку",
     summaryCopied: "Сводка по сессии скопирована.",
-    deleteSession: "Удалить сессию",
-    deleteConfirmTitle: "Удалить эту сессию?",
-    deleteConfirmText: "Эта сессия будет удалена для всех.",
-    deleteConfirmYes: "Да, удалить",
-    deleteConfirmNo: "Отмена",
-    deleteSuccess: "Сессия удалена.",
     autoTeamGenerator: "Автогенератор команд",
     autoTeamSubtitle: "Команды и ротация создаются автоматически в зависимости от числа игроков.",
     shuffle: "Перемешать",
@@ -304,15 +309,26 @@ const translations = {
     twoBalancedTeams: "2 сбалансированные команды по 5",
     twoTeamsOneRotation: "2 команды по 5 + 1 игрок ротации",
     waitingForPlayers: "Ожидание игроков",
+    deleteSession: "Удалить сессию",
+    deleteConfirmTitle: "Удалить эту сессию?",
+    deleteConfirmText: "Эта сессия будет удалена для всех.",
+    deleteConfirmYes: "Да, удалить",
+    deleteConfirmNo: "Отмена",
+    deleteSuccess: "Сессия удалена.",
+    loading: "Сессии загружаются...",
+    noSessionYet: "Сессий пока нет",
+    createFirstSession: "Создайте первую сессию выше, и она появится здесь.",
+    createSessionFirstForTeams: "Сначала создайте сессию, чтобы увидеть здесь команды.",
+    requestFailed: "Что-то пошло не так. Попробуйте ещё раз.",
   },
 };
 
-const initialSessions = [];
+const EMPTY_SESSIONS = [];
 
 export default function VolleyballBookingPreview() {
   const [language, setLanguage] = useState("en");
-  const [sessions, setSessions] = useState(initialSessions);
-  const [selectedId, setSelectedId] = useState(initialSessions[0]?.id ?? null);
+  const [sessions, setSessions] = useState(EMPTY_SESSIONS);
+  const [selectedId, setSelectedId] = useState(null);
   const [playerName, setPlayerName] = useState("");
   const [message, setMessage] = useState("");
   const [teamSeed, setTeamSeed] = useState(0);
@@ -320,6 +336,8 @@ export default function VolleyballBookingPreview() {
   const [newTime, setNewTime] = useState("18:30");
   const [newLocation, setNewLocation] = useState("FAU Sports Hall");
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
 
   const t = translations[language] || translations.en;
 
@@ -343,6 +361,10 @@ export default function VolleyballBookingPreview() {
     if (typeof window === "undefined") return;
     window.localStorage.setItem("volleyball-language", language);
   }, [language]);
+
+  useEffect(() => {
+    loadSessions();
+  }, []);
 
   useEffect(() => {
     if (!sessions.some((session) => session.id === selectedId)) {
@@ -451,6 +473,20 @@ export default function VolleyballBookingPreview() {
     low: t.low,
   };
 
+  async function loadSessions() {
+    try {
+      setLoading(true);
+      const data = await apiRequest("/.netlify/functions/get-sessions", {
+        method: "GET",
+      });
+      setSessions(Array.isArray(data.sessions) ? data.sessions : []);
+    } catch (error) {
+      setMessage(error.message || t.requestFailed);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   const getStatus = (session) => {
     if (!session) return "low";
     const count = session.names.length;
@@ -464,8 +500,8 @@ export default function VolleyballBookingPreview() {
     return Math.max(session.max - session.names.length, 0);
   };
 
-  const joinSession = () => {
-    if (!selected) return;
+  const joinSession = async () => {
+    if (!selected || submitting) return;
 
     const trimmed = playerName.trim();
     const normalized = normalizeName(trimmed);
@@ -485,19 +521,27 @@ export default function VolleyballBookingPreview() {
       return;
     }
 
-    setSessions((prev) =>
-      prev.map((session) =>
-        session.id === selected.id
-          ? { ...session, names: [...session.names, trimmed] }
-          : session
-      )
-    );
-    setPlayerName("");
-    setMessage(formatString(t.joinedSuccess, { name: trimmed }));
+    try {
+      setSubmitting(true);
+      const data = await apiRequest("/.netlify/functions/join-session", {
+        method: "POST",
+        body: {
+          sessionId: selected.id,
+          name: trimmed,
+        },
+      });
+      setSessions(Array.isArray(data.sessions) ? data.sessions : []);
+      setPlayerName("");
+      setMessage(formatString(t.joinedSuccess, { name: trimmed }));
+    } catch (error) {
+      setMessage(error.message || t.requestFailed);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
-  const leaveSession = () => {
-    if (!selected) return;
+  const leaveSession = async () => {
+    if (!selected || submitting) return;
 
     const trimmed = playerName.trim();
     const normalized = normalizeName(trimmed);
@@ -512,18 +556,23 @@ export default function VolleyballBookingPreview() {
       return;
     }
 
-    setSessions((prev) =>
-      prev.map((session) =>
-        session.id === selected.id
-          ? {
-              ...session,
-              names: session.names.filter((name) => normalizeName(name) !== normalized),
-            }
-          : session
-      )
-    );
-    setPlayerName("");
-    setMessage(formatString(t.removedSuccess, { name: trimmed }));
+    try {
+      setSubmitting(true);
+      const data = await apiRequest("/.netlify/functions/leave-session", {
+        method: "POST",
+        body: {
+          sessionId: selected.id,
+          name: trimmed,
+        },
+      });
+      setSessions(Array.isArray(data.sessions) ? data.sessions : []);
+      setPlayerName("");
+      setMessage(formatString(t.removedSuccess, { name: trimmed }));
+    } catch (error) {
+      setMessage(error.message || t.requestFailed);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const shuffleTeams = () => {
@@ -535,43 +584,62 @@ export default function VolleyballBookingPreview() {
     setMessage(t.teamsShuffled);
   };
 
-  const createSession = () => {
+  const createSession = async () => {
+    if (submitting) return;
+
     if (!newDate || !newTime || !newLocation.trim()) {
       setMessage(t.createValidation);
       return;
     }
 
-    const newId = Date.now() + Math.floor(Math.random() * 1000);
-    const created = {
-      id: newId,
-      date: newDate,
-      time: newTime,
-      location: newLocation.trim(),
-      max: 18,
-      min: 10,
-      names: [],
-    };
-
-    setSessions((prev) =>
-      [...prev, created].sort((a, b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`))
-    );
-    setSelectedId(newId);
-    setShowDeleteConfirm(false);
-    setMessage(
-      formatString(t.createdSuccess, {
-        date: formatDisplayDate(newDate, language),
-        time: newTime,
-      })
-    );
+    try {
+      setSubmitting(true);
+      const data = await apiRequest("/.netlify/functions/create-session", {
+        method: "POST",
+        body: {
+          date: newDate,
+          time: newTime,
+          location: newLocation.trim(),
+        },
+      });
+      setSessions(Array.isArray(data.sessions) ? data.sessions : []);
+      if (data.created?.id) {
+        setSelectedId(data.created.id);
+      }
+      setShowDeleteConfirm(false);
+      setMessage(
+        formatString(t.createdSuccess, {
+          date: formatDisplayDate(newDate, language),
+          time: newTime,
+        })
+      );
+    } catch (error) {
+      setMessage(error.message || t.requestFailed);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
-  const deleteSelectedSession = () => {
-    if (!selected) return;
+  const deleteSelectedSession = async () => {
+    if (!selected || submitting) return;
 
-    setSessions((prev) => prev.filter((session) => session.id !== selected.id));
-    setShowDeleteConfirm(false);
-    setMessage(t.deleteSuccess);
-    setPlayerName("");
+    try {
+      setSubmitting(true);
+      const data = await apiRequest("/.netlify/functions/delete-session", {
+        method: "POST",
+        body: {
+          sessionId: selected.id,
+        },
+      });
+      setSessions(Array.isArray(data.sessions) ? data.sessions : []);
+      setShowDeleteConfirm(false);
+      setMessage(t.deleteSuccess);
+      setPlayerName("");
+    } catch (error) {
+      setMessage(error.message || t.requestFailed);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const copySessionSummary = async () => {
@@ -601,7 +669,6 @@ export default function VolleyballBookingPreview() {
   };
 
   const selectedStatus = getStatus(selected);
-
   const hasSelectedSession = Boolean(selected);
 
   return (
@@ -615,13 +682,15 @@ export default function VolleyballBookingPreview() {
               <div className="mt-5 flex gap-3">
                 <button
                   onClick={deleteSelectedSession}
-                  className="flex-1 rounded-2xl bg-rose-600 px-4 py-3 text-sm font-medium text-white hover:bg-rose-700"
+                  disabled={submitting}
+                  className="flex-1 rounded-2xl bg-rose-600 px-4 py-3 text-sm font-medium text-white hover:bg-rose-700 disabled:opacity-60"
                 >
                   {t.deleteConfirmYes}
                 </button>
                 <button
                   onClick={() => setShowDeleteConfirm(false)}
-                  className="flex-1 rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+                  disabled={submitting}
+                  className="flex-1 rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-60"
                 >
                   {t.deleteConfirmNo}
                 </button>
@@ -713,13 +782,14 @@ export default function VolleyballBookingPreview() {
               <div className="md:col-span-2 grid gap-3 sm:grid-cols-2">
                 <button
                   onClick={createSession}
-                  className="w-full rounded-2xl bg-slate-900 px-5 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5"
+                  disabled={submitting}
+                  className="w-full rounded-2xl bg-slate-900 px-5 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 disabled:opacity-60"
                 >
                   {t.createButton}
                 </button>
                 <button
                   onClick={() => setShowDeleteConfirm(true)}
-                  disabled={!hasSelectedSession}
+                  disabled={!hasSelectedSession || submitting}
                   className="w-full rounded-2xl border border-rose-300 bg-white px-5 py-3 text-sm font-medium text-rose-700 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   {t.deleteSession}
@@ -739,43 +809,49 @@ export default function VolleyballBookingPreview() {
               </span>
             </div>
 
-            <div className="space-y-3 max-h-[420px] overflow-auto pr-1">
-              {sessions.map((session) => {
-                const status = getStatus(session);
-                return (
-                  <button
-                    key={session.id}
-                    onClick={() => {
-                      setSelectedId(session.id);
-                      setMessage(t.sessionSelected);
-                    }}
-                    className={`w-full rounded-2xl border p-4 text-left transition ${
-                      session.id === selected.id
-                        ? "border-slate-900 bg-slate-50"
-                        : "border-slate-200 bg-white hover:bg-slate-50"
-                    }`}
-                  >
-                    <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                      <div>
-                        <div className="flex flex-wrap items-center gap-2">
-                          <h3 className="text-lg font-semibold text-slate-900">{formatDisplayDate(session.date, language)}</h3>
-                          <span className={`rounded-full border px-2.5 py-1 text-xs font-medium ${statusStyles[status].badge}`}>
-                            {statusText[status]}
-                          </span>
+            {loading ? (
+              <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6 text-sm text-slate-500">
+                {t.loading}
+              </div>
+            ) : (
+              <div className="space-y-3 max-h-[420px] overflow-auto pr-1">
+                {sessions.map((session) => {
+                  const status = getStatus(session);
+                  return (
+                    <button
+                      key={session.id}
+                      onClick={() => {
+                        setSelectedId(session.id);
+                        setMessage(t.sessionSelected);
+                      }}
+                      className={`w-full rounded-2xl border p-4 text-left transition ${
+                        session.id === selected?.id
+                          ? "border-slate-900 bg-slate-50"
+                          : "border-slate-200 bg-white hover:bg-slate-50"
+                      }`}
+                    >
+                      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                        <div>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <h3 className="text-lg font-semibold text-slate-900">{formatDisplayDate(session.date, language)}</h3>
+                            <span className={`rounded-full border px-2.5 py-1 text-xs font-medium ${statusStyles[status].badge}`}>
+                              {statusText[status]}
+                            </span>
+                          </div>
+                          <p className="mt-1 text-sm text-slate-500">
+                            {session.time} · {session.location}
+                          </p>
                         </div>
-                        <p className="mt-1 text-sm text-slate-500">
-                          {session.time} · {session.location}
-                        </p>
-                      </div>
 
-                      <div className="rounded-2xl bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
-                        {session.names.length}/{session.max}
+                        <div className="rounded-2xl bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
+                          {session.names.length}/{session.max}
+                        </div>
                       </div>
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </section>
         </div>
 
@@ -785,8 +861,8 @@ export default function VolleyballBookingPreview() {
               {!hasSelectedSession ? (
                 <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
                   <p className="text-sm font-medium text-slate-500">{t.selectedSession}</p>
-                  <h2 className="mt-2 text-2xl font-semibold text-slate-900">No session yet</h2>
-                  <p className="mt-2 text-sm text-slate-500">Create your first session above and it will appear here.</p>
+                  <h2 className="mt-2 text-2xl font-semibold text-slate-900">{t.noSessionYet}</h2>
+                  <p className="mt-2 text-sm text-slate-500">{t.createFirstSession}</p>
                 </div>
               ) : (
                 <>
@@ -841,13 +917,15 @@ export default function VolleyballBookingPreview() {
                       <div className="grid grid-cols-2 gap-2 sm:w-auto">
                         <button
                           onClick={joinSession}
-                          className="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5"
+                          disabled={submitting}
+                          className="rounded-2xl bg-slate-900 px-4 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 disabled:opacity-60"
                         >
                           {t.countMeIn}
                         </button>
                         <button
                           onClick={leaveSession}
-                          className="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-100"
+                          disabled={submitting}
+                          className="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-medium text-slate-700 hover:bg-slate-100 disabled:opacity-60"
                         >
                           {t.leave}
                         </button>
@@ -870,9 +948,9 @@ export default function VolleyballBookingPreview() {
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                      {selected.names.map((name) => (
+                      {selected.names.map((name, index) => (
                         <span
-                          key={`${selected.id}-${name}`}
+                          key={`${selected.id}-${name}-${index}`}
                           className="rounded-full bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-700 ring-1 ring-slate-200"
                         >
                           {name}
@@ -894,8 +972,8 @@ export default function VolleyballBookingPreview() {
                 </div>
                 <button
                   onClick={shuffleTeams}
-                  className="rounded-2xl bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5"
                   disabled={!hasSelectedSession}
+                  className="rounded-2xl bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:-translate-y-0.5 disabled:opacity-50"
                 >
                   {t.shuffle}
                 </button>
@@ -903,7 +981,7 @@ export default function VolleyballBookingPreview() {
 
               {!hasSelectedSession || teamData.teams.length === 0 ? (
                 <div className="mt-5 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6 text-sm text-slate-500">
-                  {!hasSelectedSession ? "Create a session first to see teams here." : t.min10Hint}
+                  {!hasSelectedSession ? t.createSessionFirstForTeams : t.min10Hint}
                 </div>
               ) : (
                 <div className="mt-5 space-y-4">
@@ -996,4 +1074,23 @@ function formatString(template, values) {
   return Object.entries(values).reduce((acc, [key, value]) => {
     return acc.replaceAll(`{${key}}`, String(value));
   }, template);
+}
+
+async function apiRequest(url, options = {}) {
+  const response = await fetch(url, {
+    method: options.method || "GET",
+    headers: {
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    },
+    body: options.body ? JSON.stringify(options.body) : undefined,
+  });
+
+  const data = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(data?.error || "Request failed");
+  }
+
+  return data;
 }

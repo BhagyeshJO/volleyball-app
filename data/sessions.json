@@ -7,7 +7,9 @@
       "location": "FAU Sports Hall",
       "max": 24,
       "min": 10,
-      "names": [],
+      "names": [
+        "asdas"
+      ],
       "creatorToken": "f79dd96d724488ad12850b6972f93cb7218f267e75b11646"
     }
   ]

@@ -11,7 +11,7 @@ const translations = {
     minPlayers: "Min players",
     teamSize: "Team size",
     createSession: "Create new session",
-    createSubtitle: "Quickly create a new session with date, time, and location.",
+    createSubtitle: "Quickly create a new session with date, time, location, and max players.",
     date: "Date",
     time: "Time",
     location: "Location",
@@ -91,7 +91,7 @@ const translations = {
     minPlayers: "Min. Spieler",
     teamSize: "Teamgröße",
     createSession: "Neue Session erstellen",
-    createSubtitle: "Erstelle schnell eine neue Session mit Datum, Uhrzeit und Ort.",
+    createSubtitle: "Erstelle schnell eine neue Session mit Datum, Uhrzeit, Ort und maximalen Spielern.",
     date: "Datum",
     time: "Uhrzeit",
     location: "Ort",
@@ -171,7 +171,7 @@ const translations = {
     minPlayers: "न्यूनतम प्लेयर्स",
     teamSize: "टीम साइज़",
     createSession: "नया सेशन बनाएं",
-    createSubtitle: "डेट, टाइम और लोकेशन के साथ जल्दी नया सेशन बनाएं।",
+    createSubtitle: "डेट, टाइम, लोकेशन और मैक्स प्लेयर्स के साथ जल्दी नया सेशन बनाएं।",
     date: "तारीख",
     time: "समय",
     location: "लोकेशन",
@@ -251,7 +251,7 @@ const translations = {
     minPlayers: "Мин. игроков",
     teamSize: "Размер команды",
     createSession: "Создать новую сессию",
-    createSubtitle: "Быстро создайте новую сессию с датой, временем и местом.",
+    createSubtitle: "Быстро создайте новую сессию с датой, временем, местом и лимитом игроков.",
     date: "Дата",
     time: "Время",
     location: "Место",
@@ -335,6 +335,7 @@ export default function VolleyballBookingPreview() {
   const [newDate, setNewDate] = useState("2026-04-18");
   const [newTime, setNewTime] = useState("18:30");
   const [newLocation, setNewLocation] = useState("FAU Sports Hall");
+  const [newMaxPlayers, setNewMaxPlayers] = useState(18);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -600,6 +601,7 @@ export default function VolleyballBookingPreview() {
           date: newDate,
           time: newTime,
           location: newLocation.trim(),
+          max: newMaxPlayers,
         },
       });
       setSessions(Array.isArray(data.sessions) ? data.sessions : []);
@@ -769,6 +771,20 @@ export default function VolleyballBookingPreview() {
                   onChange={(e) => setNewTime(e.target.value)}
                   className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-900"
                 />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-medium text-slate-700">{t.maxPlayers}</label>
+                <select
+                  value={newMaxPlayers}
+                  onChange={(e) => setNewMaxPlayers(Number(e.target.value))}
+                  className="w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-900"
+                >
+                  {Array.from({ length: 17 }, (_, index) => index + 8).map((value) => (
+                    <option key={value} value={value}>
+                      {value}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="md:col-span-2">
                 <label className="mb-2 block text-sm font-medium text-slate-700">{t.location}</label>

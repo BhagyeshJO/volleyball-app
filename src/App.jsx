@@ -9,6 +9,7 @@ const translations = {
       "Date, time, and location based session creation on top. Upcoming sessions below. Auto team logic with rotation players built in.",
     maxPlayers: "Max players",
     minPlayers: "Min players",
+    minPlayersCard: "Min players needed",
     teamSize: "Team size",
     createSession: "Create new session",
     createSubtitle: "Quickly create a new session with date, time, location, and max players.",
@@ -27,10 +28,11 @@ const translations = {
     selectedSession: "Selected session",
     joined: "joined",
     fullBanner: "No more place left. This session is full.",
-    lowBanner: "Less than 10 players. Better to call it off unless more people join.",
+    lowBannerDynamic: "Less than {min} players. Better to call it off unless more people join.",
     goodBanner: "{count} players joined. Session is good to go.",
     currentCount: "Current count",
     spotsLeft: "Spots left",
+    minPlayersInline: "Min {min} players",
     autoTeamMode: "Auto team mode",
     yourName: "Your name",
     namePlaceholder: "Enter your name",
@@ -43,7 +45,7 @@ const translations = {
     autoTeamGenerator: "Auto team generator",
     autoTeamSubtitle: "Teams and rotation are created automatically based on player count.",
     shuffle: "Shuffle",
-    min10Hint: "Let at least 10 players join first, then the system will suggest teams.",
+    minPlayersHint: "Let at least {min} players join first, then the system will suggest teams.",
     rotationPlayers: "Rotation players",
     waiting: "waiting",
     sessionSelected: "Session selected.",
@@ -54,7 +56,7 @@ const translations = {
     emptyNameLeave: "Enter the same name you used to join.",
     nameNotFound: "That name was not found in this session.",
     removedSuccess: "{name} removed from the session.",
-    minPlayersShuffle: "Wait until at least 10 players join before generating teams.",
+    minPlayersShuffle: "Wait until at least {min} players join before generating teams.",
     teamsShuffled: "Teams shuffled.",
     createValidation: "Please fill date, time, and location.",
     createdSuccess: "New session created for {date} at {time}.",
@@ -89,6 +91,7 @@ const translations = {
       "Oben neue Sessions mit Datum, Uhrzeit und Ort erstellen. Unten kommende Sessions. Automatische Teamlogik mit Rotationsspielern inklusive.",
     maxPlayers: "Max. Spieler",
     minPlayers: "Min. Spieler",
+    minPlayersCard: "Benötigte Min.-Spieler",
     teamSize: "Teamgröße",
     createSession: "Neue Session erstellen",
     createSubtitle: "Erstelle schnell eine neue Session mit Datum, Uhrzeit, Ort und maximalen Spielern.",
@@ -107,10 +110,11 @@ const translations = {
     selectedSession: "Ausgewählte Session",
     joined: "angemeldet",
     fullBanner: "Kein Platz mehr frei. Diese Session ist voll.",
-    lowBanner: "Weniger als 10 Spieler. Besser absagen, falls nicht mehr Leute dazukommen.",
+    lowBannerDynamic: "Weniger als {min} Spieler. Besser absagen, falls nicht mehr Leute dazukommen.",
     goodBanner: "{count} Spieler sind dabei. Die Session kann stattfinden.",
     currentCount: "Aktuelle Anzahl",
     spotsLeft: "Freie Plätze",
+    minPlayersInline: "Min. {min} Spieler",
     autoTeamMode: "Automatischer Teammodus",
     yourName: "Dein Name",
     namePlaceholder: "Deinen Namen eingeben",
@@ -123,7 +127,7 @@ const translations = {
     autoTeamGenerator: "Automatischer Teamgenerator",
     autoTeamSubtitle: "Teams und Rotation werden automatisch je nach Spielerzahl erstellt.",
     shuffle: "Neu mischen",
-    min10Hint: "Lass erst mindestens 10 Spieler beitreten, dann schlägt das System Teams vor.",
+    minPlayersHint: "Lass erst mindestens {min} Spieler beitreten, dann schlägt das System Teams vor.",
     rotationPlayers: "Rotationsspieler",
     waiting: "wartend",
     sessionSelected: "Session ausgewählt.",
@@ -134,7 +138,7 @@ const translations = {
     emptyNameLeave: "Gib denselben Namen ein, mit dem du beigetreten bist.",
     nameNotFound: "Dieser Name wurde in dieser Session nicht gefunden.",
     removedSuccess: "{name} wurde aus der Session entfernt.",
-    minPlayersShuffle: "Warte, bis mindestens 10 Spieler beigetreten sind, bevor Teams erstellt werden.",
+    minPlayersShuffle: "Warte, bis mindestens {min} Spieler beigetreten sind, bevor Teams erstellt werden.",
     teamsShuffled: "Teams neu gemischt.",
     createValidation: "Bitte Datum, Uhrzeit und Ort ausfüllen.",
     createdSuccess: "Neue Session erstellt für {date} um {time}.",
@@ -169,6 +173,7 @@ const translations = {
       "ऊपर डेट, टाइम और लोकेशन के साथ नया सेशन बनाओ। नीचे आने वाले सेशन्स दिखेंगे। प्लेयर काउंट के हिसाब से ऑटो टीम लॉजिक भी है।",
     maxPlayers: "अधिकतम प्लेयर्स",
     minPlayers: "न्यूनतम प्लेयर्स",
+    minPlayersCard: "ज़रूरी मिन प्लेयर्स",
     teamSize: "टीम साइज़",
     createSession: "नया सेशन बनाएं",
     createSubtitle: "डेट, टाइम, लोकेशन और मैक्स प्लेयर्स के साथ जल्दी नया सेशन बनाएं।",
@@ -187,10 +192,11 @@ const translations = {
     selectedSession: "चुना हुआ सेशन",
     joined: "जॉइन किए",
     fullBanner: "अब जगह नहीं बची। यह सेशन फुल है।",
-    lowBanner: "10 से कम प्लेयर्स हैं। बेहतर है इसे फिलहाल कैंसल कर दो अगर और लोग नहीं जुड़ते।",
+    lowBannerDynamic: "{min} से कम प्लेयर्स हैं। बेहतर है इसे फिलहाल कैंसल कर दो अगर और लोग नहीं जुड़ते।",
     goodBanner: "{count} प्लेयर्स जुड़ चुके हैं। सेशन अच्छे से हो सकता है।",
     currentCount: "अभी की गिनती",
     spotsLeft: "बची हुई जगह",
+    minPlayersInline: "कम से कम {min} प्लेयर्स",
     autoTeamMode: "ऑटो टीम मोड",
     yourName: "आपका नाम",
     namePlaceholder: "अपना नाम दर्ज करें",
@@ -203,7 +209,7 @@ const translations = {
     autoTeamGenerator: "ऑटो टीम जनरेटर",
     autoTeamSubtitle: "प्लेयर काउंट के हिसाब से टीम और रोटेशन अपने आप बनते हैं।",
     shuffle: "शफल",
-    min10Hint: "पहले कम से कम 10 प्लेयर्स आने दो, फिर सिस्टम टीम्स सजेस्ट करेगा।",
+    minPlayersHint: "पहले कम से कम {min} प्लेयर्स आने दो, फिर सिस्टम टीम्स सजेस्ट करेगा।",
     rotationPlayers: "रोटेशन प्लेयर्स",
     waiting: "वेटिंग",
     sessionSelected: "सेशन चुन लिया गया है।",
@@ -214,7 +220,7 @@ const translations = {
     emptyNameLeave: "जिस नाम से जॉइन किया था वही नाम डालें।",
     nameNotFound: "यह नाम इस सेशन में नहीं मिला।",
     removedSuccess: "{name} को सेशन से हटा दिया गया है।",
-    minPlayersShuffle: "टीम बनाने से पहले कम से कम 10 प्लेयर्स होने दो।",
+    minPlayersShuffle: "टीम बनाने से पहले कम से कम {min} प्लेयर्स होने दो।",
     teamsShuffled: "टीम्स शफल हो गईं।",
     createValidation: "कृपया डेट, टाइम और लोकेशन तीनों भरें।",
     createdSuccess: "{date} को {time} पर नया सेशन बन गया।",
@@ -249,6 +255,7 @@ const translations = {
       "Сверху создание новой сессии по дате, времени и месту. Ниже ближайшие сессии. Автоматическая логика команд и ротации уже встроена.",
     maxPlayers: "Макс. игроков",
     minPlayers: "Мин. игроков",
+    minPlayersCard: "Мин. игроков нужно",
     teamSize: "Размер команды",
     createSession: "Создать новую сессию",
     createSubtitle: "Быстро создайте новую сессию с датой, временем, местом и лимитом игроков.",
@@ -267,10 +274,11 @@ const translations = {
     selectedSession: "Выбранная сессия",
     joined: "записались",
     fullBanner: "Свободных мест больше нет. Эта сессия заполнена.",
-    lowBanner: "Меньше 10 игроков. Лучше отменить, если больше никто не присоединится.",
+    lowBannerDynamic: "Меньше {min} игроков. Лучше отменить, если больше никто не присоединится.",
     goodBanner: "{count} игроков записались. Сессия может состояться.",
     currentCount: "Текущее число",
     spotsLeft: "Свободные места",
+    minPlayersInline: "Мин. игроков: {min}",
     autoTeamMode: "Авто-режим команд",
     yourName: "Ваше имя",
     namePlaceholder: "Введите ваше имя",
@@ -283,7 +291,7 @@ const translations = {
     autoTeamGenerator: "Автогенератор команд",
     autoTeamSubtitle: "Команды и ротация создаются автоматически в зависимости от числа игроков.",
     shuffle: "Перемешать",
-    min10Hint: "Пусть сначала присоединятся хотя бы 10 игроков, потом система предложит команды.",
+    minPlayersHint: "Пусть сначала присоединятся хотя бы {min} игроков, потом система предложит команды.",
     rotationPlayers: "Игроки ротации",
     waiting: "ожидают",
     sessionSelected: "Сессия выбрана.",
@@ -294,7 +302,7 @@ const translations = {
     emptyNameLeave: "Введите то же имя, с которым вы записывались.",
     nameNotFound: "Это имя не найдено в данной сессии.",
     removedSuccess: "{name} удалён(а) из сессии.",
-    minPlayersShuffle: "Подождите, пока не наберётся хотя бы 10 игроков, прежде чем формировать команды.",
+    minPlayersShuffle: "Подождите, пока не наберётся хотя бы {min} игроков, прежде чем формировать команды.",
     teamsShuffled: "Команды перемешаны.",
     createValidation: "Пожалуйста, заполните дату, время и место.",
     createdSuccess: "Новая сессия создана на {date} в {time}.",
@@ -578,7 +586,7 @@ export default function VolleyballBookingPreview() {
 
   const shuffleTeams = () => {
     if (!selected || selected.names.length < selected.min) {
-      setMessage(t.minPlayersShuffle);
+      setMessage(formatString(t.minPlayersShuffle, { min: selected?.min ?? 0 }));
       return;
     }
     setTeamSeed((prev) => prev + 1);
@@ -652,7 +660,7 @@ export default function VolleyballBookingPreview() {
       selected.location,
       `${selected.names.length}/${selected.max} ${t.joined}`,
       selected.names.length < selected.min
-        ? t.lowBanner
+        ? formatString(t.lowBannerDynamic, { min: selected.min })
         : selected.names.length >= selected.max
           ? t.fullBanner
           : formatString(t.goodBanner, { count: selected.names.length }),
@@ -727,12 +735,12 @@ export default function VolleyballBookingPreview() {
               </div>
               <div className="grid grid-cols-3 gap-3 text-center">
                 <div className="rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200">
-                  <div className="text-2xl font-bold text-slate-900">18</div>
+                  <div className="text-2xl font-bold text-slate-900">8–24</div>
                   <div className="text-xs text-slate-500">{t.maxPlayers}</div>
                 </div>
                 <div className="rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200">
-                  <div className="text-2xl font-bold text-slate-900">10</div>
-                  <div className="text-xs text-slate-500">{t.minPlayers}</div>
+                  <div className="text-2xl font-bold text-slate-900">6–10</div>
+                  <div className="text-xs text-slate-500">{t.minPlayersCard}</div>
                 </div>
                 <div className="rounded-2xl bg-slate-50 px-4 py-3 ring-1 ring-slate-200">
                   <div className="text-2xl font-bold text-slate-900">6</div>
@@ -857,6 +865,7 @@ export default function VolleyballBookingPreview() {
                           <p className="mt-1 text-sm text-slate-500">
                             {session.time} · {session.location}
                           </p>
+                          <p className="mt-1 text-xs text-slate-400">{formatString(t.minPlayersInline, { min: session.min })}</p>
                         </div>
 
                         <div className="rounded-2xl bg-slate-100 px-4 py-2 text-sm font-medium text-slate-700">
@@ -900,11 +909,11 @@ export default function VolleyballBookingPreview() {
                     {selected.names.length >= selected.max
                       ? t.fullBanner
                       : selected.names.length < selected.min
-                        ? t.lowBanner
+                        ? formatString(t.lowBannerDynamic, { min: selected.min })
                         : formatString(t.goodBanner, { count: selected.names.length })}
                   </div>
 
-                  <div className="mt-5 grid gap-4 md:grid-cols-3">
+                  <div className="mt-5 grid gap-4 md:grid-cols-4">
                     <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200">
                       <div className="text-sm text-slate-500">{t.currentCount}</div>
                       <div className="mt-1 text-3xl font-bold text-slate-900">{selected.names.length}</div>
@@ -912,6 +921,10 @@ export default function VolleyballBookingPreview() {
                     <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200">
                       <div className="text-sm text-slate-500">{t.spotsLeft}</div>
                       <div className="mt-1 text-3xl font-bold text-slate-900">{getSpotsLeft(selected)}</div>
+                    </div>
+                    <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200">
+                      <div className="text-sm text-slate-500">{t.minPlayersCard}</div>
+                      <div className="mt-1 text-3xl font-bold text-slate-900">{selected.min}</div>
                     </div>
                     <div className="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-200">
                       <div className="text-sm text-slate-500">{t.autoTeamMode}</div>
@@ -997,7 +1010,7 @@ export default function VolleyballBookingPreview() {
 
               {!hasSelectedSession || teamData.teams.length === 0 ? (
                 <div className="mt-5 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-6 text-sm text-slate-500">
-                  {!hasSelectedSession ? t.createSessionFirstForTeams : t.min10Hint}
+                  {!hasSelectedSession ? t.createSessionFirstForTeams : formatString(t.minPlayersHint, { min: selected?.min ?? 0 })}
                 </div>
               ) : (
                 <div className="mt-5 space-y-4">

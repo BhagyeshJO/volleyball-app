@@ -1,14 +1,3 @@
 {
-  "sessions": [
-    {
-      "id": 1775635868150,
-      "date": "2026-04-11",
-      "time": "15:30",
-      "location": "Sportspark centrum",
-      "max": 18,
-      "min": 10,
-      "names": [],
-      "creatorToken": "f0de0ab8efa094d223082468493b78593861a15b068ebd79"
-    }
-  ]
+  "sessions": []
 }
